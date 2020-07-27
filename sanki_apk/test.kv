@@ -1,0 +1,176 @@
+
+<Button>:
+    # font_size:30
+    text_size:self.size
+    background_normal:'normal.png'
+    background_down:'down.png'
+    border: 30,30,30,30
+    color:0,0,0,1
+    background_color: 1,1,1,1
+    # size_hint: 0.3, 0.18
+    
+<Label>:
+    # font_size:10
+    text_size:self.size
+    # color:0.3,0.6,0.7,1
+    # color:0.2,0.8,0.2,1 --dark green
+    # 51, 204, 51
+    # 204, 255, 51
+    color:0.8,1,0.2,1
+    halign:'center'
+    valign:'center'
+    multiline:"false"
+
+
+# <P>:
+#     Label:
+#         # id:
+#         text:"hi"
+#         size_hint: 0.3, 0.18
+#         pos_hint: {"x":0.2, "top":1}
+
+<Mainwindow>:
+    name: "main"
+    GridLayout:
+        padding: 20,20
+        spacing:20,20
+        cols:1
+        row_force_default:'True'
+        row_default_height:130
+        Label:
+            text:"Looking voluptous"
+            text_size:self.size
+            # size_hint_y: None
+            # height: 200
+            valign: 'center'
+            halign: 'center'
+            # pos_hint: {"x":0.2,"y":0.3,}
+            id:my_label
+        Label:
+            id:my_label2
+            text:""
+            text_size:self.size
+            valign: 'top'
+            halign: 'center'
+        Label:
+            id:my_date
+            text_size:self.size
+            # size_hint_y: None
+            # height: 20
+            halign:'center'
+            valign:'top'
+            pos_hint: {"x":0.3,"y":0.2,}
+            text:"-How to compliment women 101"
+        
+        GridLayout:            
+            cols:1
+            row_force_default:'True'
+            row_default_height:50
+        #     pos_hint: {'center_x':.5}
+            spacing:20,20
+            padding:20,20
+            Button:
+                    # pos_hint: {"x":0.5,"bottom":0}
+                text:"Generate Quote"
+                color:0,0,0,1
+                background_color: 1,1,1,1
+                halign:'center'
+                valign:'center'
+                # size_hint_y: None
+                # height: 35
+                # size_hint_x:None
+                # width: 150
+                on_release:
+                    root.set_text()
+                    text:"Generating..."
+            Button:
+                text:"Generate story"
+                color:0,0,0,1
+                background_color: 1,1,1,1
+                halign:'center'
+                valign:'center'
+                # size_hint_y: None
+                # height: 35
+                # size_hint_x:None
+                # width: 150
+                on_release:
+                    root.set_story() 
+
+            Button:
+                # pos_hint: {"x":0.1}
+                text:"Contribute"
+                color: 0,0,0,1
+                halign:'center'
+                valign:'center'
+                # size_hint_y: None
+                # height: 35
+                # size_hint_x:None
+                # width: 150
+                on_release:
+                    app.root.current="contribute"
+                    root.manager.transition.direction = "left" 
+              
+                  
+<Contribute>:
+    name:"contribute"
+    uquote: uquote
+    udate: udate
+    num: num
+    GridLayout:
+        cols:1
+        size: root.width, root.height-300
+
+        GridLayout:
+            cols:2
+            padding:20,20
+            spacing:50,50
+            # row_force_default:'True'
+            # row_default_height:60
+            Label:
+                text:"Quote"
+            TextInput:
+                id:uquote
+                multiline:True
+                hint_text: "Enter quote here"
+            Label:
+                text:"Date"                
+            TextInput:
+                id:udate
+                multiline:False
+                size_hint: (.2, None)
+                valign:'center'
+                height: 30
+                hint_text:"Enter date in dd month yyyy format"
+            Label:
+                text:"Number of quotes:"
+            Label:
+                id:num
+                text:""
+                # hint_text: "sanki chatbot and sanki dictionary coming soon. Help us build a repository of weird words he has used"
+            GridLayout:
+                cols:1
+                row_force_default:'True'
+                row_default_height:60
+                Button:
+                    text:"Submit"
+                    halign:'center'
+                    valign:'center'
+                    color:0,0,0,1
+                    on_press:root.set_submit()
+                
+                    
+            GridLayout:
+                cols:1
+                
+                row_force_default:'True'
+                row_default_height:60
+                Button:
+                    text:"Back"
+                    halign:'center'
+                    valign:'center'
+                    color:0,0,0,1
+                    on_release: 
+                        app.root.current="main"
+                        root.manager.transition.direction = "right"
+
+
