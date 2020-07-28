@@ -78,6 +78,8 @@ class MainWindow(Screen):
         # print(len(lst))
         my_label=self.ids.my_label
         my_label.text=quo
+        my_label2=self.ids.my_label2
+        my_label2.text=""
         my_date=self.ids.my_date
         my_date.text=date
     def set_story(self):
