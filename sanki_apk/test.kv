@@ -35,8 +35,8 @@
         padding: 20,20
         spacing:20,20
         cols:1
-        row_force_default:'True'
-        row_default_height:130
+        # row_force_default:'True'
+        # row_default_height:130
         Label:
             text:"Looking voluptous"
             text_size:self.size
@@ -65,10 +65,10 @@
         GridLayout:            
             cols:1
             row_force_default:'True'
-            row_default_height:50
+            row_default_height:46
         #     pos_hint: {'center_x':.5}
-            spacing:20,20
-            padding:20,20
+            spacing:50,50
+            padding:300,5
             Button:
                     # pos_hint: {"x":0.5,"bottom":0}
                 text:"Generate Quote"
@@ -76,8 +76,8 @@
                 background_color: 1,1,1,1
                 halign:'center'
                 valign:'center'
-                # size_hint_y: None
-                # height: 35
+                size_hint_y: None
+                height: 70
                 # size_hint_x:None
                 # width: 150
                 on_release:
@@ -89,8 +89,8 @@
                 background_color: 1,1,1,1
                 halign:'center'
                 valign:'center'
-                # size_hint_y: None
-                # height: 35
+                size_hint_y: None
+                height: 70
                 # size_hint_x:None
                 # width: 150
                 on_release:
@@ -102,8 +102,8 @@
                 color: 0,0,0,1
                 halign:'center'
                 valign:'center'
-                # size_hint_y: None
-                # height: 35
+                size_hint_y: None
+                height: 70
                 # size_hint_x:None
                 # width: 150
                 on_release:
@@ -150,7 +150,7 @@
             GridLayout:
                 cols:1
                 row_force_default:'True'
-                row_default_height:60
+                row_default_height:70
                 Button:
                     text:"Submit"
                     halign:'center'
@@ -163,7 +163,7 @@
                 cols:1
                 
                 row_force_default:'True'
-                row_default_height:60
+                row_default_height:70
                 Button:
                     text:"Back"
                     halign:'center'
