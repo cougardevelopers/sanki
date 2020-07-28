@@ -133,13 +133,16 @@
                 multiline:True
                 hint_text: "Enter quote here"
             Label:
-                text:"Date"                
+                text:"Date" 
+                size_hint_y: None
+                height: 50               
             TextInput:
                 id:udate
                 multiline:False
-                size_hint: (.2, None)
-                valign:'center'
-                height: 30
+                size_hint: (0.8, None)
+                height: 50
+                valign:'top'
+                
                 hint_text:"Enter date in dd month yyyy format"
             Label:
                 text:"Number of quotes:"
